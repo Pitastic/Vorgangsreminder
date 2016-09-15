@@ -31,9 +31,13 @@ Der Vorgangsreminder speichert alle deine Eingaben in einer Datenbankdatei direk
 ##Funktionen
 
 ###Priorisierte Vorgangsliste
+-
 
 ###Maßnahmen-Protokoll
+-
 
 ###Workflows
+-
 
-###Suchfunktion und Hashtags \#
+###Suchfunktion und Hashtags &#35;
+-

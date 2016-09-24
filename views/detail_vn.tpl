@@ -81,16 +81,5 @@
 		uls[i].addEventListener("keydown", listen);
 		}
 	writeTags();
-
-	function insertWorkflow(flow) {
-		var flow_elements = document.getElementById(flow).getElementsByTagName('ul');
-		for (var i = 0; i < flow_elements.length; i++) {
-			var w_id = newTree();
-			var query = "ul[data-gruppe='"+w_id+"']";
-			var container = document.querySelector(query);
-			container.innerHTML = flow_elements[i].innerHTML;
-		}
-		return
-	}
 </script>
 </html>

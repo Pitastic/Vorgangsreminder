@@ -1,5 +1,6 @@
 var keys = []; // Array für multiple KeyEvents
 
+
 function newTree(){
 // neuen Tree anlegen (inkl Header)
 	// Erstelle unique ID
@@ -17,7 +18,7 @@ function newTree(){
 	sec.insertBefore(ul, sec.childNodes[0]);
 	
 	// EventListener für das neue UL
-	ul.addEventListener("input", listen);
+	ul.addEventListener("input", listenKey);
 	
 	// Erstelle Header-Funktionen
 	var div = document.createElement('div');
@@ -54,7 +55,7 @@ function newTree(){
 	return t;
 }
 
-function listen(e){
+function listenKey(e){
 	// EventListener
 	var lis = e.target.getElementsByTagName('li');
 	for (i=0;i<lis.length;i++){
@@ -73,6 +74,10 @@ function pressKeys(e){
 	if (e.altKey){
 		e.target.classList.toggle('indented');
 		e.preventDefault();
+	}
+	// Check ob ESC
+	if (e.keyCode == 27) {
+		closePop();
 	}
 }
 
@@ -160,6 +165,24 @@ function sucheVN(){
 
 function writeTags() {
 	document.getElementById('hidden_tags').value = document.getElementById('tags').value;
+	return;
+}
+
+function popUp() {
+	var f = document.getElementById('fadeBlack');
+	f.classList.remove('hide');
+	document.getElementsByClassName('popUp')[0].classList.remove('hide');
+	window.addEventListener('keydown', closePop);
+	return;
+}
+
+function closePop() {
+	var f = document.getElementById('fadeBlack');
+	if (f) {
+		f.classList.add('hide')
+		document.getElementsByClassName('popUp')[0].classList.add('hide');
+		window.removeEventListener('keydown', closePop);
+	}
 	return;
 }
 

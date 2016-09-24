@@ -176,7 +176,6 @@ def show_vn(vn):
 	cur = conn.cursor()
 	cur.execute("SELECT * FROM vorgaenge WHERE vn=?",[vn,])
 	notes = None
-	module = getConfigs()
 	for row in cur:
 		notes = row['notes']
 		created = formDate(row['created'], False)
@@ -187,7 +186,7 @@ def show_vn(vn):
 	conn.commit()
 	conn.close()
 	if notes:
-		return template('detail_vn.tpl', created=created, vn=vn, tags=tags, notes=notes, changed=changed, todo=todo, remind_date=remind_date, module=module)
+		return template('detail_vn.tpl', created=created, vn=vn, tags=tags, notes=notes, changed=changed, todo=todo, remind_date=remind_date)
 	else:
 		heading = "Vorgangs wurde nicht gefunden !"
 		msg_class = "error"

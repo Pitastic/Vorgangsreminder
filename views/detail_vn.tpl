@@ -51,20 +51,6 @@
 </footer>
 		</form>
 
-	<div id="archiv">
-	%for m in module:
-		<div id="modul_{{m}}">
-			%for i in module[m]:
-				<ul>
-					%for x in i:
-						<li>{{x}}</li>
-					%end
-				</ul>
-			%end
-		</div>
-	%end
-	</div>
-
 </body>
 
 <script type="text/javascript" src="../script.js"></script>

@@ -1,2 +1,7 @@
+# Standards:
+.DS_Store
+._*
+*.pyc
+
 # Ignore Databases 
 /*.db

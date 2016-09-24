@@ -1,4 +1,6 @@
 # Standards:
+._*
+/._*
 .DS_Store
 ._*
 *.pyc

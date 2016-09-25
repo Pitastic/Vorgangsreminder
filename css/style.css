@@ -303,6 +303,9 @@ ul.tree > span {
 	-moz-user-select: none; 
 }
 	#mySection div input[type='button'] {
+		margin: 0; padding: 0;
+		height: 35px; width: 35px;
+		line-height: 1em;
 		border: 1px solid white;
 		border-radius: 0;
 		color: white;

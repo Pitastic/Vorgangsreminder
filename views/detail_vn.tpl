@@ -56,7 +56,7 @@
 	<div class="popUp hide">
 		<h5>Workflow einfügen:</h5>
 		<select name="addWF" id="addWF">
-		%for m in module:
+		%for m in sorted(module):
 			<option>{{m}}</option>
 		%end
 		</select>

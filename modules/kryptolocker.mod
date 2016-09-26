@@ -1,11 +1,12 @@
-# ==============================
-# Konfiguration der Vordrucke
-# ==============================
+# ==================
+# Workflow-Modul
+# ==================
 # 
+# Hinweise:
+#
 # Alle Zeilen mit einer '#' werden ignoriert.
 # Verwendung (ohne Anführungszeichen):
 # Variablenname = WERT (einzeilig)
-# Variablenname : WERT (mehrzeilig)
 # Beachte die Verwendung von Variablen/Platzhalter (z.B. '%(foo)')
 # die sich auf Variablen der gleichen Sektion oder der DEAULT-Sektion beziehen.
 #
@@ -15,7 +16,7 @@
 
 
 [DEFAULT]
-modul =	Cerber
+modul =	Kryptolocker
 
 
 [Eintrag1]
@@ -40,12 +41,5 @@ l1	=	Screenshot mit Bitcoin-Wallet / .html-Datei
 
 
 [Eintrag5]
-l1	=	Speicherung INPOL FALL / EIS	
-l2	=	Ja - 
-l3	=	Nein - 
-
-
-[Eintrag6]
-l1	=	Abgabe an StA
-l2	=	StA Verden - 
-l3	=	StA Hannover - 
+l1	=	Speicherung INPOL FALL / EIS
+l3	=	Bericht gefertigt & an StA Verden/Hannover

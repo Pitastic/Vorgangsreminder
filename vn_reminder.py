@@ -19,8 +19,9 @@ import time
 import codecs
 import math
 import sys
-from os import listdir
+import glob
 import re
+import ConfigParser
 from bottle import Bottle, PasteServer, static_file, route, run, template, request, redirect
 
 # Global Variables
@@ -108,6 +109,23 @@ def myResult(cur, arr_fields):
 		result.append(r)
 	return result
 
+def getConfigs():
+	configs = {}
+	confs = glob.iglob('./modules/*.mod')
+	for x in confs:
+		c = ConfigParser.ConfigParser()
+		c.read(x)
+		m_defaults = c.defaults()
+		m_name = m_defaults['modul']
+		configs[m_name] = []
+		for s in c.sections():
+			c_list = []
+			for item in c.options(s):
+				if not item in m_defaults:
+					c_list.append(c.get(s,item))
+			if c_list:
+				configs[m_name].append(c_list)
+	return configs
 
 # Static Files
 @app.route('/<filename:re:.*\.css>')

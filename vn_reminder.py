@@ -19,7 +19,7 @@ import time
 import codecs
 import math
 import sys
-import glob
+from os import listdir
 import re
 import ConfigParser
 from bottle import Bottle, PasteServer, static_file, route, run, template, request, redirect
@@ -111,12 +111,13 @@ def myResult(cur, arr_fields):
 
 def getConfigs():
 	configs = {}
-	confs = glob.iglob('./modules/*.mod')
+	confs = listdir('./modules')
 	for x in confs:
 		c = ConfigParser.ConfigParser()
-		c.read(x)
+		c.read('modules/'+x)
 		m_defaults = c.defaults()
 		m_name = m_defaults['modul']
+		#c.get('DEFAULT', 'modul')
 		configs[m_name] = []
 		for s in c.sections():
 			c_list = []
@@ -194,6 +195,7 @@ def show_vn(vn):
 	cur = conn.cursor()
 	cur.execute("SELECT * FROM vorgaenge WHERE vn=?",[vn,])
 	notes = None
+	module = getConfigs()
 	for row in cur:
 		notes = row['notes']
 		created = formDate(row['created'], False)
@@ -204,7 +206,7 @@ def show_vn(vn):
 	conn.commit()
 	conn.close()
 	if notes:
-		return template('detail_vn.tpl', created=created, vn=vn, tags=tags, notes=notes, changed=changed, todo=todo, remind_date=remind_date)
+		return template('detail_vn.tpl', created=created, vn=vn, tags=tags, notes=notes, changed=changed, todo=todo, remind_date=remind_date, module=module)
 	else:
 		heading = "Vorgangs wurde nicht gefunden !"
 		msg_class = "error"

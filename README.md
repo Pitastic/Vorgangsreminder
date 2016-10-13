@@ -40,10 +40,10 @@ https://github.com/Pitastic/Vorgangsreminder/releases/latest
 3. In diesem Verzeichnis Rechtsklick auf die Datei `vn_reminder.py` und `Öffnen / Im Terminal ausführen` wählen.
   - *oder Alternativ*:
     - Terminal aus dem Startmenü öffnen
-    - in das neue Verzeichnis wechseln und Datei ausführen<br>
+    - in das neue Verzeichnis wechseln<br>
     `cd /home/BENUTZER/Dokumente/Vorgangsreminder-1`<br>
     (drücken der `Tab-Taste` hilft bei der Pfadeingabe)
-    - Datei starten<br>
+    - und Datei ausführen<br>
     `./vn_reminder.py`
 
 4. Gib folgende Adresse in den Internetbrowser (**nicht Intranetbrowser**) ein: <a href="http://localhost:8080">localhost:8080</a>

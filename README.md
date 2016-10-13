@@ -1,6 +1,16 @@
 # Vorgangsreminder
-Vorgangsverwaltungssystem mit Erinnerungsfunktion
+*Vorgangsverwaltungssystemmit verschiedenen Funktionen zur Erinnerung, Notizen und Archivierung.*
 
+
+## Inhalt
+
+- [Ziele des Tools](#Ziele)
+- [Installation](#Installation)
+- [Datenschutz](#Datenschutz)
+- [Funktionen](#Funktionen)
+
+
+<a name="Ziele"></a>
 ## Ziel des Tools
 
 ###Remind Me
@@ -21,13 +31,19 @@ Möchte man sehr eng mit dem Tool arbeiten bietet es außerdem auch vorgefertigt
 Bei allen Funktionen besteht kein Anspruch darauf, etwas ausfüllen oder eingeben zu *müssen*. Das Tool ermöglicht es jedem Nutzer es in einer individuellen Tiefe zu nutzen.
 
 
+<a name="Installation"></a>
+##Installation
+
+
+<a name="Datenschutz"></a>
 ##Datenschutz
 
-Der Vorgangsreminder speichert alle deine Eingaben in einer Datenbankdatei direkt im Programmverzeichnis.
+Der Vorgangsreminder speichert alle deine Eingaben in einer Datenbankdatei (`vorgaenge.db`) direkt im Programmverzeichnis.
 
 **Es verlassen keine Daten deinen PC / dein AFS Konto !**
 
 
+<a name="Funktionen"></a>
 ##Funktionen
 
 ###Priorisierte Vorgangsliste

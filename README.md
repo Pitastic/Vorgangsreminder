@@ -34,6 +34,22 @@ Bei allen Funktionen besteht kein Anspruch darauf, etwas ausfüllen oder eingebe
 <a name="Installation"></a>
 ##Installation
 
+1. ZIP-Datei in der Download-Section des neuesten Realeses herunterladen:<br>
+https://github.com/Pitastic/Vorgangsreminder/releases/latest
+2. Datei entpacken zum Beispiel nach `/home/BENUTZER/Dokumente`. Dadurch wird ein Unterverzeichnis `Vorgangsreminder-1-X` angelegt.
+3. In diesem Verzeichnis Rechtsklick auf die Datei `vn_reminder.py` und `Öffnen / Im Terminal ausführen` wählen.
+  - *oder Alternativ*:
+    - Terminal aus dem Startmenü öffnen
+    - in das neue Verzeichnis wechseln und Datei ausführen<br>
+    `cd /home/BENUTZER/Dokumente/Vorgangsreminder-1`<br>
+    (drücken der `Tab-Taste` hilft bei der Pfadeingabe)
+    - Datei starten<br>
+    `./vn_reminder.py`
+
+4. Gib folgende Adresse in den Internetbrowser (**nicht Intranetbrowser**) ein: <a href="http://localhost:8080">localhost:8080</a>
+5. Im Vorgangsreminder-Ordner wurde mit dem ersten Aufruf eine neue Datei mit dem Namen `vorgaenge.db` erstellt. Hier werden alle Daten gespeichert. **Sichere diese Datei von Zeit zu Zeit und vor jedem Update !**
+6. Das Programm läuft im Terminal. Mit dem Schließen wird auch der Vorgangsreminder beendet.
+
 
 <a name="Datenschutz"></a>
 ##Datenschutz

@@ -87,7 +87,10 @@ function timeStamp(element){
 	var monat = s.getMonth()+1;
 	var jahr = s.getFullYear().toString().substring(2,4);
 	monat = (monat>9) ? monat : "0"+monat;
-	element.innerHTML += " ("+tag+"."+monat+"."+jahr+")";
+	var text = element.innerHTML;
+	// lösche End-Breaks
+	if (text.substr(-4) == "<br>"){text = text.substr(0,text.length-4)}
+	element.innerHTML = text+" ("+tag+"."+monat+"."+jahr+")";
 }
 
 function moveUp(element) {

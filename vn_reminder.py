@@ -281,4 +281,4 @@ def drop():
 
 # Start Service
 createDB()
-run(app, host='127.0.0.1', port=8080, server=PasteServer, debug=True)
+run(app, host='127.0.0.1', port=8081, server=PasteServer, debug=True)

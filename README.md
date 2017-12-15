@@ -46,7 +46,7 @@ https://github.com/Pitastic/Vorgangsreminder/releases/latest
 	- und Datei ausführen<br>
 	`./vn_reminder.py`
 
-4. Gib folgende Adresse in den Intranetbrowser (**nicht Internetbrowser**) ein: <a href="http://localhost:8080">localhost:8080</a>
+4. Gib folgende Adresse in den Intranetbrowser (**nicht Internetbrowser**) ein: <a href="http://localhost:8081">localhost:8081</a>
 5. Im Vorgangsreminder-Ordner wurde mit dem ersten Aufruf eine neue Datei mit dem Namen `vorgaenge.db` erstellt. Hier werden alle Daten gespeichert. **Sichere diese Datei von Zeit zu Zeit und vor jedem Update !**
 6. Das Programm läuft im Terminal. Mit dem Schließen wird auch der Vorgangsreminder beendet.
 

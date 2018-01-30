@@ -31,6 +31,7 @@ db_file = 'vorgaenge.db'
 # Allgemeine Funktionen
 def createDB():
 	conn = sqlite3.connect(db_file)
+	conn.text_factory = str
 	cur = conn.cursor()
 	cur.execute("CREATE TABLE IF NOT EXISTS vorgaenge (id INTEGER PRIMARY KEY AUTOINCREMENT, vn INTEGER UNIQUE, created DATETIME DEFAULT CURRENT_TIMESTAMP, changed DATETIME DEFAULT CURRENT_TIMESTAMP, notes TEXT DEFAULT 'aktiv', todo TEXT, remind_date TEXT)")
 	conn.commit()
@@ -145,6 +146,7 @@ def images(filename):
 def show_db():
 	count = 1
 	conn = sqlite3.connect(db_file)
+	conn.text_factory = str
 	conn.row_factory = sqlite3.Row
 	cur = conn.cursor()
 	cur.execute("SELECT * FROM vorgaenge WHERE notes != 'abgeschlossen' ORDER BY notes, remind_date")
@@ -161,6 +163,7 @@ def createVN():
 		redirect("suche/"+vn,303)
 	remind_date = time.time()+(7*3600*24)
 	conn = sqlite3.connect(db_file)
+	conn.text_factory = str
 	cur = conn.cursor()
 	try:
 		cur.execute("INSERT INTO vorgaenge (vn, remind_date) VALUES (?, ?)",[vn, remind_date])
@@ -191,6 +194,7 @@ def createVN():
 @app.route('/vorgang/:vn')
 def show_vn(vn):
 	conn = sqlite3.connect(db_file)
+	conn.text_factory = str
 	conn.row_factory = sqlite3.Row
 	cur = conn.cursor()
 	cur.execute("SELECT * FROM vorgaenge WHERE vn=?",[vn,])
@@ -218,6 +222,7 @@ def show_vn(vn):
 @app.route('/todo_aendern', method='POST')
 def todo_aendern():
 	conn = sqlite3.connect(db_file)
+	conn.text_factory = str
 	cur = conn.cursor()
 	stodo = request.forms.get('todo_text', '').strip()
 	stodo = stodo.decode('utf-8')
@@ -244,6 +249,7 @@ def todo_aendern():
 def sucheTag(query):
 	query = "%"+query+"%"
 	conn = sqlite3.connect(db_file)
+	conn.text_factory = str
 	conn.row_factory = sqlite3.Row
 	cur = conn.cursor()
 	cur.execute("SELECT * FROM vorgaenge WHERE vn LIKE ? OR tags LIKE ? ORDER BY vn", [query, query])
@@ -255,6 +261,7 @@ def sucheTag(query):
 @app.route('/drop_:vn')
 def drop_VN(vn):
 	conn = sqlite3.connect(db_file)
+	conn.text_factory = str
 	cur = conn.cursor()
 	cur.execute("DELETE FROM vorgaenge WHERE vn=?", [vn])
 	conn.commit()
@@ -269,6 +276,7 @@ def drop_VN(vn):
 @app.route('/dropDB')
 def drop():
 	conn = sqlite3.connect(db_file)
+	conn.text_factory = str
 	cur = conn.cursor()
 	cur.execute("DROP TABLE vorgaenge")
 	conn.commit()

@@ -1,10 +1,13 @@
 var keys = []; // Array für multiple KeyEvents
 
 
-function newTree(){
+function newTree(counter){
 // neuen Tree anlegen (inkl Header)
 	// Erstelle unique ID
-	var t = new Date().getTime();
+	var t = new Date().getTime().toString();
+	if (counter) {
+		t += counter;
+	}
 	
 	// Erstelle Tree
 	var ul = document.createElement('ul');

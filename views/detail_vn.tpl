@@ -101,7 +101,7 @@
 		var flow = document.getElementById('addWF').value;
 		var flow_elements = document.getElementById("modul_"+flow).getElementsByTagName('ul');
 		for (var i = 0; i < flow_elements.length; i++) {
-			var w_id = newTree();
+			var w_id = newTree(i+1);
 			var query = "ul[data-gruppe='"+w_id+"']";
 			var container = document.querySelector(query);
 			container.innerHTML = flow_elements[i].innerHTML;

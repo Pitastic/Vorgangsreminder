@@ -2,7 +2,7 @@ html {
 	background-image: url(pi_logo.png), -webkit-linear-gradient(45deg, rgba(0,0,0,0.1) 0%,rgba(135,135,180,0.25) 25%,rgba(135,135,180,0.25) 75%,rgba(0,0,0,0.1) 100%), url(back_kachel.png);
 	background-image: url(pi_logo.png), -moz-linear-gradient(45deg, rgba(0,0,0,0.1) 0%,rgba(135,135,180,0.25) 25%,rgba(135,135,180,0.25) 75%,rgba(0,0,0,0.1) 100%), url(back_kachel.png);
 	background-image: url(pi_logo.png), linear-gradient(45deg, rgba(0,0,0,0.1) 0%, rgba(135,135,180,0.25) 25%, rgba(135,135,180,0.25) 75%, rgba(0,0,0,0.1) 100%), url(back_kachel.png);
-	background-size: auto, auto, 32px 32px;
+	background-size: 32px 32px 32px;
 	background-position: 99% 1%, top left, top left;
 	background-repeat: no-repeat, repeat, repeat;
 	min-height: 100%;

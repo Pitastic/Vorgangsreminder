@@ -1,6 +1,11 @@
 #!/bin/bash
 # -*- coding: utf-8 -*-
 
+# TODO:
+# - Pfad zum Programm variabel
+# - Sichern/Updaten von Vordrucken
+# - Updater == Installer ?
+
 while true; do
 	echo
 	echo "=== Update und Installation des aktuellen Vorgangsreminders ==="

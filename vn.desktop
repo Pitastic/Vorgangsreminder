@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Vorgangsreminder
+Type=Application
+Icon=/home/USERNAME/Vorgangsreminder/pi_logo.png
+Exec=/home/USERNAME/Vorgangsreminder/start.sh
+Comment=Vorgangsreminder Startskript
+Terminal=false

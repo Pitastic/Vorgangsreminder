@@ -137,14 +137,13 @@ def stylesheets(filename):
 def images(filename):
 	return static_file(filename, root='img')
 @app.route('/<filename:re:.*\.js>')
-def images(filename):
+def scripts(filename):
 	return static_file(filename, root='js')
 
 
 # Routings
 @app.route('/')
 def show_db():
-	count = 1
 	conn = sqlite3.connect(db_file)
 	conn.text_factory = str
 	conn.row_factory = sqlite3.Row

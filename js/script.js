@@ -100,12 +100,12 @@ function moveUp(element) {
 	var i, new_index;
 	var mySection = document.getElementById('mySection');
 	var uni_id = element.parentNode.parentNode.getAttribute('data-gruppe');
-	toMove = document.querySelectorAll("[data-gruppe='"+uni_id+"']");
-	// finde aktuellen Index im DOM - 2
-	new_index = [].indexOf.call(mySection.children, toMove[0])-1;
-	if (!(new_index<0)){
-		for (i=toMove.length-1;i>-1;i--){
-			mySection.insertBefore(toMove[i], mySection.childNodes[new_index]);
+	var toMove = document.querySelectorAll("[data-gruppe='"+uni_id+"']");
+	// finde den Index des vorherigen Eintrags im DOM (-2)
+	var prev_element = [].indexOf.call(mySection.children, toMove[0]) - 2;
+	if (prev_element >= 0) {
+		for (let el = 0; el < toMove.length; el++) {
+			mySection.insertBefore(toMove[el], mySection.childNodes[prev_element + el]);
 		}
 	}
 }

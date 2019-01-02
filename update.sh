@@ -22,11 +22,13 @@ if [[ $INSTALL ]]
 	then
 		# Vorbereitungen
 		echo
+		VN_PATH="`dirname \"$0\"`"
+		VN_PATH="`( cd \"${VN_PATH}\" && pwd )`"
 		PASS=false
 
-		if [[ -f "/home/${USER}/Vorgangsreminder/new_update.sh" ]]; then
+		if [[ -f "${VN_PATH}/new_update.sh" ]]; then
 			# Für den Fall den Updater upzudaten
-			/home/${USER}/Vorgangsreminder/new_update.sh
+			${VN_PATH}/new_update.sh
 			exit;
 		else
 
@@ -39,9 +41,9 @@ if [[ $INSTALL ]]
 			
 			# Copy old DB to Temp
 			echo "2. sichere alte Vorgänge"
-			if [ -f "/home/${USER}/Vorgangsreminder/vorgaenge.db" ]; then
+			if [ -f "${VN_PATH}/vorgaenge.db" ]; then
 				echo "  ...vorgaenge.db gefunden"
-				cp /home/${USER}/Vorgangsreminder/vorgaenge.db /tmp/vorgaenge.db
+				cp ${VN_PATH}/vorgaenge.db /tmp/vorgaenge.db
 				HAT_VORGAENGE=true
 			else
 				echo ">> SKIPPING (keine alten Vorgänge vorhanden)"
@@ -50,16 +52,16 @@ if [[ $INSTALL ]]
 			# Extract VN
 			if [[ $PASS ]]; then
 				# Remove VN
-				rm -rf /home/${USER}/Vorgangsreminder
-				mkdir /home/${USER}/Vorgangsreminder;
+				rm -rf ${VN_PATH}
+				mkdir ${VN_PATH};
 
-				echo "3. entpacke neue Version nach: /home/${USER}/Vorgangsreminder"
-				tar -xzf $SAVETO -C /home/${USER}/Vorgangsreminder --strip-components 1
+				echo "3. entpacke neue Version nach: ${VN_PATH}"
+				tar -xzf $SAVETO -C ${VN_PATH} --strip-components 1
 
 				# Alte VNs wiederherstellen (ggf.)
 				if [[ $HAT_VORGAENGE ]]; then
 					echo "4. stelle alte Vorgänge wieder her"
-					mv /tmp/vorgaenge.db /home/${USER}/Vorgangsreminder/vorgaenge.db
+					mv /tmp/vorgaenge.db ${VN_PATH}/vorgaenge.db
 				fi
 				echo
 				echo "Dein Vorgangsreminder ist jetzt auf der neuesten Version (${TAG}) !"

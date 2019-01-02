@@ -5,7 +5,7 @@
     <meta name="viewport" content="max-width=device-width", initial-scale="1.0">
 	<link type="text/css" href="style.css" rel="stylesheet">
 	
-	<title>Vorgangs-Reminder (v 1.1.3)</title>
+	<title>Vorgangs-Reminder (v 1.1.4)</title>
 </head>
 
 <body>
